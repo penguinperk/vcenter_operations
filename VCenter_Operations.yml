@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+    - default_config.yml
+    - vault.yml
+  gather_facts: no
+  tasks:
+  - include_tasks: VCenter_getFacts.yml
+    tags: status
+
+  - include_tasks: VCenter_Guest_list.yml
+    tags: list
+
+  - include_tasks: VCenter_Guest_restart.yml
+    tags: restart
+
+  - include_tasks: VCenter_Guest_stop.yml 
+    tags: stop
+
+  - include_tasks: VCenter_Guest_start.yml
+    tags: start

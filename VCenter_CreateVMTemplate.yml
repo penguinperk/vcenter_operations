@@ -1,0 +1,30 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Clone the template
+      vmware_guest:
+        hostname: vcenter.pn.com 
+        username: scott
+        password: m4n.c3v31
+        validate_certs: False
+        name: testvm_2
+        template: Freebsd-11.2-Template
+        datacenter: Datacenter
+        state: poweredon
+        cluster: PN_Cluster
+#
+#    - name:  Clone a virtual machine from Linux template and customize
+#      vmware_guest:
+#        hostname: vcenter.pn.com
+#        username: scott
+#        password: m4n.c4v31
+#        validate_certs: no
+#        datacenter: Datacenter
+#        state: present
+#        template: Freebsd-11.2-Template 
+#        name: Foo
+#        cluster: PN_Cluster
+#        wait_for_ip_address: True
+#  - name: Clone the template

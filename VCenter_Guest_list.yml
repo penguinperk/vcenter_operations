@@ -1,0 +1,16 @@
+---
+- name: Listing VM Facts
+  vmware_vm_facts:
+    validate_certs: False
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    vm_type: all
+  delegate_to: localhost
+  register: vmfacts
+  tags: list
+
+- name: Out
+  debug:
+    msg: "{{ vmfacts }}"
+  tags: list

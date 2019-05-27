@@ -1,0 +1,14 @@
+Scotts-Mac-mini:VCenter_tests scott$ 
+
+https://github.com/vmware/vsphere-automation-sdk-python
+
+
+# git clone https://github.com/vmware/vsphere-automation-sdk-python.git
+Cloning into 'vsphere-automation-sdk-python'...
+remote: Enumerating objects: 347, done.
+remote: Counting objects: 100% (347/347), done.
+remote: Compressing objects: 100% (288/288), done.
+remote: Total 2881 (delta 152), reused 185 (delta 54), pack-reused 2534
+Receiving objects: 100% (2881/2881), 66.90 MiB | 9.01 MiB/s, done.
+Resolving deltas: 100% (1750/1750), done.
+

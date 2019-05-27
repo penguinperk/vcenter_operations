@@ -1,0 +1,21 @@
+---
+- name: Find folder path of an existing virtual machine
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - set_fact:
+        vm_name: "Tower"
+
+    - name: "Find folder for VM - {{ vm_name }}"
+      vmware_guest_find:
+        hostname: vcenter.pn.com 
+        username: scott@pn.com
+        password: m4n.c4v31 
+        validate_certs: False
+        name: "{{ vm_name }}"
+      delegate_to: localhost
+      register: vm_facts
+
+    - name: Out
+      debug:
+        msg: "{{ vm_facts }}"
