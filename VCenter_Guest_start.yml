@@ -8,7 +8,7 @@
 #  connection: local
 #  gather_facts: True
 #  tasks:
-- name: 'Reboot VM:   {{ guest }}'
+- name: 'Starting/Powering on VM:   {{ guest }}'
   vmware_guest:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
@@ -25,10 +25,10 @@
 
 - name: Out
   debug:
-    msg: "Restarting vm:    {{ guest }}"
+    msg: "Starting/Powering on vm:    {{ guest }}"
   tags: start
 
-- name: Waiting for VM {{ guest }} to come back online...
+- name: Waiting for VM {{ guest }} to come online...
   wait_for:
     host: "{{ guest }}"
     port: 22
